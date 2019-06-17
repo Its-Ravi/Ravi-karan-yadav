@@ -9,7 +9,7 @@ SS_xx = np.sum(x*x) -((np.sum(x))**2/n)
 b1 = SS_xy / SS_xx 
 b0 = m_y - b1*m_x
 print(b1,b0)
-plt.style.use('fivethirtyeight') 
+plt.style.use('ggplot') 
 plt.scatter(x, y, color = "g", 
 marker = "o") 
 y_pred = b0 + b1*x  
