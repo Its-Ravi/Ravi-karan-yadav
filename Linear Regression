@@ -1,0 +1,19 @@
+import numpy as np
+import matplotlib.pyplot as plt
+x=np.linspace(0,50,100)
+y=np.random.uniform(np.linspace(0,100,100))
+n = np.size(x) 
+m_x, m_y = np.mean(x), np.mean(y)  
+SS_xy = np.sum(y*x) - (np.sum(x)*np.sum(y)/n)
+SS_xx = np.sum(x*x) -((np.sum(x))**2/n)
+b1 = SS_xy / SS_xx 
+b0 = m_y - b1*m_x
+print(b1,b0)
+plt.style.use('fivethirtyeight') 
+plt.scatter(x, y, color = "g", 
+marker = "o") 
+y_pred = b0 + b1*x  
+plt.plot(x, y_pred, color = "b")  
+plt.xlabel('x') 
+plt.ylabel('y')
+plt.show() 
